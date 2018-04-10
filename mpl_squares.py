@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 x_values = list(xrange(1, 100))
 y_values = [x**2 for x in x_values]
 
-plt.scatter(x_values, y_values, c='red', edgecolor='none', s=40)  # 自定义颜色可如c=(0,0,0.8)般RGB表示,但此中每个数须为0~1之间
+plt.scatter(x_values, y_values, c=y_values, cmap=plt.cm.Blues, edgecolor='none', s=40)  # 自定义颜色可如c=(0,0,0.8)般RGB表示,但此中每个数须为0~1之间;越近0颜色越深,近1则浅; 颜色映射,让线条有浅深变化
 # 设置图表标题,并给坐标轴加上标签
 plt.title('Square Numbers', fontsize=24)
 plt.xlabel('Value', fontsize=14)  # x轴标题
