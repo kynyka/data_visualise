@@ -1,1 +1,2 @@
 Tentative works in data visualising.
+Managed to collect data and visualising it by using matplotlib. Also, I made scattergrams to simulate the process of random walk. Histograms emulating results of casting dices were created with Pygal.
