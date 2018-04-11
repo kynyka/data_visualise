@@ -10,6 +10,9 @@ while True:
     rw = RandomWalk(50000)  # 将类默认的5000点增多指50000点
     rw.fill_walk()
 
+    # 设置绘图窗口的尺寸
+    plt.figure(dpi=96, figsize=(10, 6))  # 系统分辨率,Py默认80dot/inch|屏幕分辨率>放大或缩小文本和其他项目>设置自定义文本大小
+
     point_numbers = list(xrange(rw.num_points))
     plt.scatter(rw.x_values, rw.y_values, c=point_numbers, cmap=plt.cm.Blues, edgecolors='none', s=1)
 
