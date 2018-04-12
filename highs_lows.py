@@ -23,14 +23,16 @@ with open(filename) as f:
         lows.append(low)
     # 根据数据绘制图形
     fig = plt.figure(dpi=96, figsize=(10, 6))
-    plt.plot(dates, highs, c='red')
-    plt.plot(dates, lows, c='blue')
+    plt.plot(dates, highs, c='red', alpha=0.5)  # 透明度,默认1完全不透明
+    plt.plot(dates, lows, c='blue', alpha=0.5)
+    plt.fill_between(dates, highs, lows, facecolor='blue', alpha=0.1)
 
     # 设置图形的格式
     plt.title('Daily high and low temperatures - 2014', fontsize=24)
     plt.xlabel('', fontsize=16)
     fig.autofmt_xdate()  # 绘制斜的日期标签,以免彼此重叠
     plt.ylabel('Temperature (F)', fontsize=16)
-    plt.tick_params(axis='both', which='major', labelsize=16)
+    plt.tick_params(axis='both', which='both', labelsize=16)
+    # plt.gca().xaxis.set_major_locator(plt.AutoLocator())  # 设置刻度间距 MaxNLocator(14)|AutoLocator()是MaxNLocator with simple defaults. This is the default tick locator for most plotting.|LinearLocator是evenly spaced ticks from min to max
 
     plt.show()
