@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 import json
 import pygal.maps.world as pmw
-from pygal.style import RotateStyle
+from pygal.style import LightColorizedStyle as LCS, RotateStyle as RS  #LightColorizedStyle不能直接控制使用的颜色
 from country_codes import get_country_code
 
 # 将数据加载到一个列表中
@@ -33,7 +33,7 @@ for cc, pop in cc_populations.items():
 # 看看每组分别包含多少个国家
 # print(len(cc_pops_1), len(cc_pops_2), len(cc_pops_3))
 
-wm_style = RotateStyle('#336699')  # 让Pygal使用一种基色
+wm_style = RS('#336699', base_style=LCS)  # 让Pygal使用一种基色
 wm = pmw.World(style=wm_style)
 wm.title = 'World Population in 2008, by Country'
 wm.add('0-10m', cc_pops_1)
