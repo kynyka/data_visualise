@@ -7,5 +7,25 @@ def get_country_code(country_name):
     for code, name in COUNTRIES.items():
         if name == country_name:
             return code
+        elif name == 'Egypt, Arab Rep.':
+            return 'eg'
+        elif name == 'Gambia, The':
+            return 'gm'
+        elif name == 'Hong Kong SAR, China':
+            return 'hk'
+        elif name == 'Iran, Islamic Rep.':
+            return 'ir'
+        elif name == 'Kyrgyz Republic':
+            return 'kg'
+        elif name == 'Lao PDR':
+            return 'la'
+        elif name == 'Slovak Republic':
+            return 'sk'
+        elif name == 'Tanzania':
+            return 'tz'
+        elif name == 'Vietnam':
+            return 'vn'
+        elif name == 'Yemen, Rep.':
+            return 'ye'
     # 如果没有找到指定的国家,就返回None
     return None
