@@ -11,7 +11,7 @@ with open(filename) as f:
 
 # 创建一个包含人口数量的字典
 cc_populations = {}
-# 打印每个国家2010年的人口数量
+# 打印每个国家2008年的人口数量
 for pop_dict in pop_data:
     if pop_dict['Year'] == '2008':
         country_name = pop_dict['Country Name']
