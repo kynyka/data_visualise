@@ -17,10 +17,18 @@ print("Total repositories:", response_dict['total_count'])
 repo_dicts = response_dict['items']
 # print('Repositories returned:', len(repo_dicts))  # https://api.github.com/rate_limit这里看API的速率限制
 
-names, stars = [], []
+names, plot_dicts = [], []
 for repo_dict in repo_dicts:
     names.append(repo_dict['name'])
-    stars.append(repo_dict['stargazers_count'])
+    # if repo_dict['description'].encode('utf-8').find('—'):  # 默认ascii编码,不encode一下,会找不到—
+    #     repo_dict['description'] = repo_dict['description'].encode('utf-8').replace('—', '--')
+
+    plot_dict = {
+        'value': repo_dict['stargazers_count'],
+        'label': repo_dict['description'] or '',  #或者写成三元表达式https://segmentfault.com/q/1010000012917291
+        'fork':  repo_dict['forks_count'],  # 自定义的key没能显示出来
+    }
+    plot_dicts.append(plot_dict)
 
 # 可视化
 my_style = LS('#333366', base_style=LCS)
@@ -39,5 +47,5 @@ chart = pygal.Bar(my_config, style=my_style)  # legend即左侧小方块
 chart.title = 'Most-Starred Python Projects on GitHub'
 chart.x_labels = names
 
-chart.add('', stars)  # 就是左边的小方块后的字,为空即不显示
+chart.add('', plot_dicts)  # 就是左边的小方块后的字,为空即不显示
 chart.render_to_file('diagram/python_repos.svg')
