@@ -17,6 +17,10 @@ def get_country_code(country_name):
             return 'ir'
         elif name == 'Kyrgyz Republic':
             return 'kg'
+        elif name == 'Korea, Dem. People’s Rep.':
+            return 'kp'
+        elif name == 'Korea, Rep.':
+            return 'kr'
         elif name == 'Lao PDR':
             return 'la'
         elif name == 'Slovak Republic':
