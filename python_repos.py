@@ -27,6 +27,7 @@ for repo_dict in repo_dicts:
         'value': repo_dict['stargazers_count'],
         'label': repo_dict['description'] or '',  #或者写成三元表达式https://segmentfault.com/q/1010000012917291
         'fork':  repo_dict['forks_count'],  # 自定义的key没能显示出来
+        'xlink':  repo_dict['html_url'],
     }
     plot_dicts.append(plot_dict)
 
