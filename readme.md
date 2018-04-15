@@ -1,2 +1,2 @@
-Tentative works in data visualising.
-Managed to collect data and visualising it by using matplotlib. Also, scattergrams were made to simulate the process of random walk. Histograms emulating results of casting dices were created with Pygal. Line charts drawn from the data that read from csv files were also available.
+Making scattergrams or line charts that simulate the process of random walk or results of casting dices with matplotlib.
+Drawing histograms or world map from the data read from csv files or json data with pygal, such as histogram of Most-Starred Python Projects on GitHub, a world map of Ease of Doing Business Index and bar graph of 30 New, Top and Best Stories on Hacker News.
