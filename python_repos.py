@@ -25,15 +25,15 @@ for repo_dict in repo_dicts:
 # 可视化
 my_style = LS('#333366', base_style=LCS)
 
-my_cofig = pygal.Config()  # 定制图的外观
-my_cofig.x_label_rotation = 45
-my_cofig.show_legend = False
-my_cofig.title_font_size = 24
-my_cofig.label_font_size = 14  # 副标签字大小
-my_cofig.major_label_font_size = 18  # 主标签字大小
-my_cofig.truncate_label = 15  # 将较长项目名缩短为15个字符(鼠标移上去会完整显示)
-my_cofig.show_y_guides = False
-my_cofig.width = 1000
+my_config = pygal.Config()  # 定制图的外观
+my_config.x_label_rotation = 45
+my_config.show_legend = False
+my_config.title_font_size = 24
+my_config.label_font_size = 14  # 副标签字大小
+my_config.major_label_font_size = 18  # 主标签字大小
+my_config.truncate_label = 15  # 将较长项目名缩短为15个字符(鼠标移上去会完整显示)
+my_config.show_y_guides = False  # y轴参考虚线
+my_config.width = 1000  # 图表宽度
 
 chart = pygal.Bar(my_config, style=my_style)  # legend即左侧小方块
 chart.title = 'Most-Starred Python Projects on GitHub'
